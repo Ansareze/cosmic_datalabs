@@ -60,98 +60,71 @@
 
     <section class="contact-section">
         <div class="container">
-            <div class="contact-grid">
-                <!-- Contact Information -->
-                <div class="contact-info fade-up">
-                    <h2>Contact Information</h2>
-                    <p class="contact-intro">Choose the best way to reach us. We typically respond within 24-48 hours.</p>
-                    
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon">📧</div>
-                            <div class="contact-details">
-                                <h3>Email Us</h3>
-                                <p>Send us an email for general inquiries, support, or enrollment questions.</p>
-                                <a href="mailto:cosmicdatalabs@gmail.com" class="contact-link">cosmicdatalabs@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="contact-icon">💬</div>
-                            <div class="contact-details">
-                                <h3>WhatsApp</h3>
-                                <p>Chat with us on WhatsApp for quick responses.</p>
-                                <!-- Replace # with your actual WhatsApp link -->
-                                <a href="#" class="contact-link" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="contact-icon">🏢</div>
-                            <div class="contact-details">
-                                <h3>Registration</h3>
-                                <p>MSME Registered Training Initiative</p>
-                                <p class="contact-reg">UDYAM-DL-09-0020339</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Media Links -->
-                    <div class="social-section">
-                        <h3>Follow Us</h3>
-                        <div class="social-links-large">
-                            <!-- Replace # with your actual social media links -->
-                            <a href="#" class="social-link-large" aria-label="WhatsApp" title="WhatsApp">
-                                <span class="social-icon">💬</span>
-                                <span>WhatsApp</span>
-                            </a>
-                            <a href="#" class="social-link-large" aria-label="LinkedIn" title="LinkedIn">
-                                <span class="social-icon">💼</span>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="#" class="social-link-large" aria-label="Instagram" title="Instagram">
-                                <span class="social-icon">📷</span>
-                                <span>Instagram</span>
-                            </a>
-                        </div>
-                    </div>
+            <!-- Contact Information Cards -->
+            <div class="contact-info-cards fade-up">
+                <div class="contact-method-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>Send us an email for general inquiries, support, or enrollment questions.</p>
+                    <a href="mailto:cosmicdatalabs@gmail.com" class="contact-link-btn">cosmicdatalabs@gmail.com</a>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="contact-form-container fade-up">
+                <div class="contact-method-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>Chat with us on WhatsApp for quick responses.</p>
+                    <!-- Replace # with your actual WhatsApp link -->
+                    <a href="#" class="contact-link-btn" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+                </div>
+
+                <div class="contact-method-card">
+                    <div class="contact-icon">🏢</div>
+                    <h3>MSME Registered</h3>
+                    <p>UDYAM-DL-09-0020339</p>
+                    <p class="contact-reg-small">Verified Training Initiative</p>
+                </div>
+            </div>
+
+            <!-- Contact Form - Block Layout -->
+            <div class="contact-form-block fade-up">
+                <div class="contact-form-container">
                     <h2>Send Us a Message</h2>
-                    <p class="form-intro">Fill out the form below and we'll get back to you as soon as possible.</p>
+                    <p class="form-intro">Fill out the form below and we'll get back to you as soon as possible. We typically respond within 24-48 hours.</p>
                     
                     <form class="contact-form" id="contactForm" novalidate>
-                        <div class="form-group">
-                            <label for="name">Full Name <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                            <span class="error-message" id="nameError"></span>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                                <span class="error-message" id="nameError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                                <span class="error-message" id="emailError"></span>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email">Email Address <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                            <span class="error-message" id="emailError"></span>
-                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 1234567890">
+                                <span class="error-message" id="phoneError"></span>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+91 1234567890">
-                            <span class="error-message" id="phoneError"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject <span class="required">*</span></label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="enrollment">Enrollment Inquiry</option>
-                                <option value="support">Technical Support</option>
-                                <option value="payment">Payment Related</option>
-                                <option value="certificate">Certificate Query</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <span class="error-message" id="subjectError"></span>
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="required">*</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="enrollment">Enrollment Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="payment">Payment Related</option>
+                                    <option value="certificate">Certificate Query</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message" id="subjectError"></span>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -172,6 +145,26 @@
                         
                         <div class="form-message" id="formMessage"></div>
                     </form>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-section-block fade-up">
+                <h3>Follow Us on Social Media</h3>
+                <div class="social-links-large">
+                    <!-- Replace # with your actual social media links -->
+                    <a href="#" class="social-link-large" aria-label="WhatsApp" title="WhatsApp">
+                        <span class="social-icon">💬</span>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" class="social-link-large" aria-label="LinkedIn" title="LinkedIn">
+                        <span class="social-icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#" class="social-link-large" aria-label="Instagram" title="Instagram">
+                        <span class="social-icon">📷</span>
+                        <span>Instagram</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -204,6 +197,7 @@
                         <h4>Quick Links</h4>
                         <a href="index.html" class="footer-link">Home</a>
                         <a href="index.html#curriculum" class="footer-link">Curriculum</a>
+                        <a href="index.html#certificate" class="footer-link">Certificate</a>
                         <a href="faq.html" class="footer-link">FAQ</a>
                         <a href="contact.html" class="footer-link">Contact</a>
                         <a href="enroll.html" class="footer-link">Enroll Now</a>

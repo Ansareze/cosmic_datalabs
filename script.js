@@ -39,11 +39,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             
             // Close mobile menu if open
             const mobileMenu = document.getElementById('mobileMenuToggle');
-            if (mobileMenu) {
+            const navLinks = document.getElementById('navLinks');
+            if (mobileMenu && navLinks) {
                 mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
             }
         }
     });
+});
+
+// ===== HANDLE ANCHOR LINKS FROM OTHER PAGES =====
+// When landing on index.html with an anchor hash, scroll to that section
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash) {
+        const hash = window.location.hash;
+        const target = document.querySelector(hash);
+        if (target) {
+            // Small delay to ensure page is fully loaded
+            setTimeout(() => {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        }
+    }
 });
 
 // ===== FADE-UP ANIMATION ON SCROLL =====
@@ -107,16 +128,22 @@ if (applyBtn) {
 }
 
 if (floatingCTA) {
+    // If it's a link to enroll.html, let it work normally
+    // If it's an anchor link, handle smooth scroll
     floatingCTA.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector('#apply');
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        const href = floatingCTA.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         }
+        // If it's a page link (like enroll.html), let it work normally
     });
 }
 
@@ -165,30 +192,34 @@ if (hero && cosmicBg) {
 }
 
 // ===== FLOATING CTA VISIBILITY =====
-const floatingCTAObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        const ctaSection = document.getElementById('apply');
-        if (ctaSection) {
-            const ctaRect = ctaSection.getBoundingClientRect();
-            const isCTAVisible = ctaRect.top < window.innerHeight && ctaRect.bottom > 0;
-            
-            if (floatingCTA) {
-                if (isCTAVisible) {
-                    floatingCTA.style.opacity = '0';
-                    floatingCTA.style.pointerEvents = 'none';
-                } else {
-                    floatingCTA.style.opacity = '1';
-                    floatingCTA.style.pointerEvents = 'auto';
-                }
-            }
-        }
-    });
-}, { threshold: 0.1 });
-
+// Only hide/show floating CTA if it's an anchor link, not a page link
 if (floatingCTA) {
-    const ctaSection = document.getElementById('apply');
-    if (ctaSection) {
-        floatingCTAObserver.observe(ctaSection);
+    const href = floatingCTA.getAttribute('href');
+    if (href && href.startsWith('#')) {
+        const floatingCTAObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const ctaSection = document.getElementById(href.substring(1));
+                if (ctaSection) {
+                    const ctaRect = ctaSection.getBoundingClientRect();
+                    const isCTAVisible = ctaRect.top < window.innerHeight && ctaRect.bottom > 0;
+                    
+                    if (floatingCTA) {
+                        if (isCTAVisible) {
+                            floatingCTA.style.opacity = '0';
+                            floatingCTA.style.pointerEvents = 'none';
+                        } else {
+                            floatingCTA.style.opacity = '1';
+                            floatingCTA.style.pointerEvents = 'auto';
+                        }
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        const ctaSection = document.getElementById(href.substring(1));
+        if (ctaSection) {
+            floatingCTAObserver.observe(ctaSection);
+        }
     }
 }
 
@@ -284,25 +315,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const faqQuestions = document.querySelectorAll('.faq-question');
     
     faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
+        // Set initial state
+        question.setAttribute('aria-expanded', 'false');
+        
+        question.addEventListener('click', (e) => {
+            e.preventDefault();
             const isExpanded = question.getAttribute('aria-expanded') === 'true';
             const answer = question.nextElementSibling;
+            
+            if (!answer || !answer.classList.contains('faq-answer')) {
+                return;
+            }
             
             // Close all other FAQs
             faqQuestions.forEach(q => {
                 if (q !== question) {
-                    q.setAttribute('aria-expanded', 'false');
-                    q.nextElementSibling.style.maxHeight = null;
+                    const otherAnswer = q.nextElementSibling;
+                    if (otherAnswer && otherAnswer.classList.contains('faq-answer')) {
+                        q.setAttribute('aria-expanded', 'false');
+                        otherAnswer.style.maxHeight = '0';
+                    }
                 }
             });
             
             // Toggle current FAQ
             if (isExpanded) {
                 question.setAttribute('aria-expanded', 'false');
-                answer.style.maxHeight = null;
+                answer.style.maxHeight = '0';
+                question.closest('.faq-item').classList.remove('active');
             } else {
                 question.setAttribute('aria-expanded', 'true');
+                // Set max-height to a large value to allow smooth transition
                 answer.style.maxHeight = answer.scrollHeight + 'px';
+                question.closest('.faq-item').classList.add('active');
             }
         });
     });
