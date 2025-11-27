@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cosmic DataLabs - Where Data Meets Intelligence. 12-Week ML Training + Internship Experience">
-    <title>Cosmic DataLabs - Where Data Meets Intelligence</title>
+    <meta name="description" content="Cosmic DataLabs - Where Data Meets Intelligence. 12-Week ML Training + Internship Experience. MSME Registered. Secure Payment via Razorpay.">
+    <meta name="keywords" content="machine learning, ML training, data science, internship, certificate, online course, India">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cosmic DataLabs - Where Data Meets Intelligence">
+    <meta property="og:description" content="12-Week ML Training + Internship Experience with Projects, Roadmaps & Certificates. Only ₹4,999.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:url" content="https://yourusername.github.io/cosmic_datalabs/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cosmic DataLabs - ML Training Program">
+    <meta name="twitter:description" content="12-Week ML Training + Internship Experience. Only ₹4,999.">
+    <meta name="twitter:image" content="assets/logo.png">
+    
+    <title>Cosmic DataLabs - Where Data Meets Intelligence | ML Training Program</title>
+    
+    <!-- Favicon - Replace with your favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,25 +34,36 @@
 </head>
 <body>
     <!-- Floating Apply Now Button -->
-    <a href="#apply" class="floating-cta" id="floatingCTA">
+    <a href="enroll.html" class="floating-cta" id="floatingCTA">
         <span>Apply Now</span>
         <span class="price-badge">₹4,999</span>
     </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="assets/logo.png" alt="Cosmic DataLabs Logo" class="logo-icon">
-                <span class="brand-name">Cosmic DataLabs</span>
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Cosmic DataLabs Logo" class="logo-icon">
+                    <span class="brand-name">Cosmic DataLabs</span>
+                </a>
             </div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#curriculum">Curriculum</a>
-                <a href="#certificate">Certificate</a>
-                <a href="#apply" class="nav-cta">Apply Now</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="index.html#curriculum">Curriculum</a>
+                <a href="index.html#certificate">Certificate</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="enroll.html" class="nav-cta">Enroll</a>
             </div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -55,12 +84,27 @@
                     Structured 12-Week ML Training + Internship Experience with Projects, Roadmaps & Certificates.
                 </p>
                 <div class="hero-ctas">
-                    <a href="#apply" class="btn btn-primary">
+                    <a href="enroll.html" class="btn btn-primary">
                         Apply Now — Limited Seats <span class="price">(₹4,999)</span>
                     </a>
                     <a href="#curriculum" class="btn btn-secondary">
                         Get the Curriculum
                     </a>
+                </div>
+                <!-- Trust Signals -->
+                <div class="trust-signals fade-up">
+                    <div class="trust-badge">
+                        <span class="trust-icon">✓</span>
+                        <span>MSME Registered</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-icon">🔒</span>
+                        <span>Secure Payment via Razorpay</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-icon">📜</span>
+                        <span>Internship Certificate</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-graphic">
@@ -248,23 +292,16 @@
                 <p class="cta-subtitle">
                     Join Cosmic DataLabs and transform your career with hands-on ML training
                 </p>
-                <a href="#apply-form" class="btn btn-primary btn-large" id="applyBtn">
+                <a href="enroll.html" class="btn btn-primary btn-large">
                     Apply Now — Limited Seats <span class="price">(₹4,999)</span>
                 </a>
                 <p class="cta-note">Limited seats available. Secure your spot today!</p>
+                <div class="cta-trust">
+                    <p>🔒 Secure Payment via Razorpay | 📧 Questions? <a href="contact.html">Contact Us</a> | 📋 <a href="terms.html">Terms & Conditions</a></p>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Application Form Modal (Placeholder) -->
-    <div class="modal" id="applyModal">
-        <div class="modal-content">
-            <span class="modal-close" id="modalClose">&times;</span>
-            <h2>Apply Now</h2>
-            <p>Application form will be integrated here.</p>
-            <p>For now, please contact us at <a href="mailto:cosmicdatalabs@gmail.com">cosmicdatalabs@gmail.com</a></p>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -279,25 +316,38 @@
                 </div>
                 <div class="footer-links">
                     <div class="footer-section">
-                        <h4>Contact</h4>
-                        <a href="mailto:cosmicdatalabs@gmail.com" class="footer-link">cosmicdatalabs@gmail.com</a>
+                        <h4>Quick Links</h4>
+                        <a href="index.html" class="footer-link">Home</a>
+                        <a href="index.html#curriculum" class="footer-link">Curriculum</a>
+                        <a href="faq.html" class="footer-link">FAQ</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="enroll.html" class="footer-link">Enroll Now</a>
                     </div>
                     <div class="footer-section">
-                        <h4>Registration</h4>
-                        <p class="footer-text">UDYAM-DL-09-0020339</p>
+                        <h4>Legal</h4>
+                        <a href="terms.html" class="footer-link">Terms & Conditions</a>
+                        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                        <a href="faq.html" class="footer-link">Refund Policy</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <a href="mailto:cosmicdatalabs@gmail.com" class="footer-link">cosmicdatalabs@gmail.com</a>
+                        <a href="contact.html" class="footer-link">Contact Form</a>
+                        <p class="footer-text">MSME: UDYAM-DL-09-0020339</p>
                     </div>
                     <div class="footer-section">
                         <h4>Follow Us</h4>
                         <div class="social-links">
-                            <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
-                            <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
-                            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                            <!-- Replace # with your actual social media links -->
+                            <a href="#" class="social-link" aria-label="WhatsApp" title="WhatsApp">💬</a>
+                            <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" aria-label="Instagram" title="Instagram">📷</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Cosmic DataLabs. All rights reserved.</p>
+                <p>&copy; 2025 Cosmic DataLabs. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
             </div>
         </div>
     </footer>

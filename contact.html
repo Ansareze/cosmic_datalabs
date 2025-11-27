@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Cosmic DataLabs. Get in touch via email, contact form, or WhatsApp. We're here to help with your ML training journey.">
+    <title>Contact Us - Cosmic DataLabs</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Cosmic DataLabs Logo" class="logo-icon">
+                    <span class="brand-name">Cosmic DataLabs</span>
+                </a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="index.html#curriculum">Curriculum</a>
+                <a href="index.html#certificate">Certificate</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="enroll.html" class="nav-cta">Enroll</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title fade-up">Get in <span class="gradient-text">Touch</span></h1>
+            <p class="page-subtitle fade-up">Have questions? We're here to help! Reach out to us through any of the channels below.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info fade-up">
+                    <h2>Contact Information</h2>
+                    <p class="contact-intro">Choose the best way to reach us. We typically respond within 24-48 hours.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email Us</h3>
+                                <p>Send us an email for general inquiries, support, or enrollment questions.</p>
+                                <a href="mailto:cosmicdatalabs@gmail.com" class="contact-link">cosmicdatalabs@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
+                                <h3>WhatsApp</h3>
+                                <p>Chat with us on WhatsApp for quick responses.</p>
+                                <!-- Replace # with your actual WhatsApp link -->
+                                <a href="#" class="contact-link" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">🏢</div>
+                            <div class="contact-details">
+                                <h3>Registration</h3>
+                                <p>MSME Registered Training Initiative</p>
+                                <p class="contact-reg">UDYAM-DL-09-0020339</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="social-section">
+                        <h3>Follow Us</h3>
+                        <div class="social-links-large">
+                            <!-- Replace # with your actual social media links -->
+                            <a href="#" class="social-link-large" aria-label="WhatsApp" title="WhatsApp">
+                                <span class="social-icon">💬</span>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="#" class="social-link-large" aria-label="LinkedIn" title="LinkedIn">
+                                <span class="social-icon">💼</span>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link-large" aria-label="Instagram" title="Instagram">
+                                <span class="social-icon">📷</span>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container fade-up">
+                    <h2>Send Us a Message</h2>
+                    <p class="form-intro">Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 1234567890">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject <span class="required">*</span></label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="enrollment">Enrollment Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="payment">Payment Related</option>
+                                <option value="certificate">Certificate Query</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <span>I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and consent to being contacted by Cosmic DataLabs.</span>
+                            </label>
+                            <span class="error-message" id="consentError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Quick Link -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content fade-up">
+                <h2>Before You Contact Us</h2>
+                <p>Check out our FAQ page - you might find the answer you're looking for!</p>
+                <a href="faq.html" class="btn btn-secondary">View FAQ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="Cosmic DataLabs Logo" class="logo-icon">
+                        <span class="brand-name">Cosmic DataLabs</span>
+                    </div>
+                    <p class="footer-tagline">Where Data Meets Intelligence.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <a href="index.html" class="footer-link">Home</a>
+                        <a href="index.html#curriculum" class="footer-link">Curriculum</a>
+                        <a href="faq.html" class="footer-link">FAQ</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="enroll.html" class="footer-link">Enroll Now</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <a href="terms.html" class="footer-link">Terms & Conditions</a>
+                        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                        <a href="faq.html" class="footer-link">Refund Policy</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <a href="mailto:cosmicdatalabs@gmail.com" class="footer-link">cosmicdatalabs@gmail.com</a>
+                        <a href="contact.html" class="footer-link">Contact Form</a>
+                        <p class="footer-text">MSME: UDYAM-DL-09-0020339</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="WhatsApp" title="WhatsApp">💬</a>
+                            <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" aria-label="Instagram" title="Instagram">📷</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cosmic DataLabs. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+

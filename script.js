@@ -257,3 +257,304 @@ console.log('%c🌌 Cosmic DataLabs', 'font-size: 20px; font-weight: bold; color
 console.log('%cWhere Data Meets Intelligence.', 'font-size: 14px; color: #A259FF;');
 console.log('%cBuilt with ❤️ for future ML professionals', 'font-size: 12px; color: #4FE3C1;');
 
+/* ===== NEW FUNCTIONALITY FOR MULTI-PAGE SITE ===== */
+
+// ===== SCROLL TO TOP BUTTON =====
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+if (scrollToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ===== FAQ ACCORDION =====
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+            const answer = question.nextElementSibling;
+            
+            // Close all other FAQs
+            faqQuestions.forEach(q => {
+                if (q !== question) {
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.style.maxHeight = null;
+                }
+            });
+            
+            // Toggle current FAQ
+            if (isExpanded) {
+                question.setAttribute('aria-expanded', 'false');
+                answer.style.maxHeight = null;
+            } else {
+                question.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+});
+
+// ===== FORM VALIDATION =====
+// Contact Form Validation
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form fields
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const subject = document.getElementById('subject');
+        const message = document.getElementById('message');
+        const consent = document.getElementById('consent');
+        const formMessage = document.getElementById('formMessage');
+        
+        let isValid = true;
+        
+        // Reset previous errors
+        clearFormErrors(contactForm);
+        
+        // Validate name
+        if (!name.value.trim()) {
+            showError('name', 'Name is required');
+            isValid = false;
+        }
+        
+        // Validate email
+        if (!email.value.trim()) {
+            showError('email', 'Email is required');
+            isValid = false;
+        } else if (!isValidEmail(email.value)) {
+            showError('email', 'Please enter a valid email address');
+            isValid = false;
+        }
+        
+        // Validate phone (optional but if provided, should be valid)
+        if (phone.value.trim() && !isValidPhone(phone.value)) {
+            showError('phone', 'Please enter a valid phone number');
+            isValid = false;
+        }
+        
+        // Validate subject
+        if (!subject.value) {
+            showError('subject', 'Please select a subject');
+            isValid = false;
+        }
+        
+        // Validate message
+        if (!message.value.trim()) {
+            showError('message', 'Message is required');
+            isValid = false;
+        } else if (message.value.trim().length < 10) {
+            showError('message', 'Message must be at least 10 characters');
+            isValid = false;
+        }
+        
+        // Validate consent
+        if (!consent.checked) {
+            showError('consent', 'You must agree to the Privacy Policy');
+            isValid = false;
+        }
+        
+        if (isValid) {
+            // Form is valid - in production, you would send this to your server
+            // For now, show success message
+            formMessage.textContent = 'Thank you! Your message has been sent. We\'ll get back to you soon.';
+            formMessage.className = 'form-message success';
+            contactForm.reset();
+            
+            // In production, replace this with actual form submission:
+            // fetch('/api/contact', { method: 'POST', body: formData })
+            //   .then(response => response.json())
+            //   .then(data => { /* handle success */ })
+            //   .catch(error => { /* handle error */ });
+        } else {
+            formMessage.textContent = 'Please correct the errors below.';
+            formMessage.className = 'form-message error';
+        }
+    });
+}
+
+// Enrollment Form Validation
+const enrollForm = document.getElementById('enrollForm');
+if (enrollForm) {
+    enrollForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form fields
+        const name = document.getElementById('enrollName');
+        const email = document.getElementById('enrollEmail');
+        const phone = document.getElementById('enrollPhone');
+        const college = document.getElementById('enrollCollege');
+        const interest = document.getElementById('enrollInterest');
+        const terms = document.getElementById('enrollTerms');
+        const formMessage = document.getElementById('enrollFormMessage');
+        const paymentSection = document.getElementById('paymentSection');
+        
+        let isValid = true;
+        
+        // Reset previous errors
+        clearFormErrors(enrollForm);
+        
+        // Validate name
+        if (!name.value.trim()) {
+            showError('enrollName', 'Name is required');
+            isValid = false;
+        }
+        
+        // Validate email
+        if (!email.value.trim()) {
+            showError('enrollEmail', 'Email is required');
+            isValid = false;
+        } else if (!isValidEmail(email.value)) {
+            showError('enrollEmail', 'Please enter a valid email address');
+            isValid = false;
+        }
+        
+        // Validate phone
+        if (!phone.value.trim()) {
+            showError('enrollPhone', 'Phone number is required');
+            isValid = false;
+        } else if (!isValidPhone(phone.value)) {
+            showError('enrollPhone', 'Please enter a valid phone number');
+            isValid = false;
+        }
+        
+        // Validate interest
+        if (!interest.value) {
+            showError('enrollInterest', 'Please select your course interest');
+            isValid = false;
+        }
+        
+        // Validate terms
+        if (!terms.checked) {
+            showError('enrollTerms', 'You must agree to the Terms & Conditions');
+            isValid = false;
+        }
+        
+        if (isValid) {
+            // Form is valid - show payment section
+            formMessage.textContent = 'Form submitted successfully! Please proceed to payment.';
+            formMessage.className = 'form-message success';
+            paymentSection.style.display = 'block';
+            paymentSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // In production, you would:
+            // 1. Save enrollment data to your server
+            // 2. Generate a payment order with Razorpay
+            // 3. Initialize Razorpay checkout
+        } else {
+            formMessage.textContent = 'Please correct the errors below.';
+            formMessage.className = 'form-message error';
+        }
+    });
+}
+
+// Helper Functions for Form Validation
+function showError(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    const errorElement = document.getElementById(fieldId + 'Error');
+    
+    if (field) {
+        field.classList.add('error');
+    }
+    
+    if (errorElement) {
+        errorElement.textContent = message;
+        errorElement.classList.add('show');
+    }
+}
+
+function clearFormErrors(form) {
+    const errorMessages = form.querySelectorAll('.error-message');
+    const errorFields = form.querySelectorAll('.error');
+    
+    errorMessages.forEach(error => {
+        error.classList.remove('show');
+        error.textContent = '';
+    });
+    
+    errorFields.forEach(field => {
+        field.classList.remove('error');
+    });
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function isValidPhone(phone) {
+    // Basic phone validation - accepts international format
+    const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ''));
+}
+
+// ===== RAZORPAY PAYMENT INTEGRATION (PLACEHOLDER) =====
+// Replace this with your actual Razorpay integration
+const razorpayButton = document.getElementById('razorpayButton');
+if (razorpayButton) {
+    razorpayButton.addEventListener('click', () => {
+        // In production, initialize Razorpay checkout here
+        // Example:
+        /*
+        const options = {
+            key: 'YOUR_RAZORPAY_KEY_ID',
+            amount: 499900, // Amount in paise (₹4,999)
+            currency: 'INR',
+            name: 'Cosmic DataLabs',
+            description: '12-Week ML Training Program',
+            handler: function(response) {
+                // Handle successful payment
+                window.location.href = 'thankyou.html';
+            },
+            prefill: {
+                email: document.getElementById('enrollEmail').value,
+                contact: document.getElementById('enrollPhone').value,
+                name: document.getElementById('enrollName').value
+            },
+            theme: {
+                color: '#4C84FF'
+            }
+        };
+        const rzp = new Razorpay(options);
+        rzp.open();
+        */
+        
+        // For now, redirect to thank you page (remove in production)
+        alert('Payment integration placeholder. In production, this will open Razorpay checkout.');
+        // window.location.href = 'thankyou.html';
+    });
+}
+
+// ===== MOBILE MENU IMPROVEMENTS =====
+// Update mobile menu to close on link click
+const navLinks = document.querySelector('.nav-links');
+if (navLinks) {
+    const navLinksItems = navLinks.querySelectorAll('a');
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', () => {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            if (mobileMenuToggle && window.innerWidth <= 768) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+}
+
