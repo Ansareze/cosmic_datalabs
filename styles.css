@@ -852,21 +852,13 @@ section {
 }
 
 /* ===== ANIMATIONS ===== */
-/* ===== ANIMATIONS ===== */
 .fade-up {
-    /* Default state: visible (fallback for no JS) */
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Only hide if JS is enabled */
-.js-enabled .fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.js-enabled .fade-up.visible {
+.fade-up.visible {
     opacity: 1;
     transform: translateY(0);
 }

@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Enroll in Cosmic DataLabs 12-Week ML Training Program. Secure payment via Razorpay. Only ₹4,999. Limited seats available.">
-    <title>Enroll Now - Cosmic DataLabs | ML Training Program</title>
-
+    <meta name="description" content="Enroll in Cosmic DataLabs AI & Data Science Training Programs. Secure payment via Razorpay. Limited seats available.">
+    <title>Enroll Now - Cosmic DataLabs | AI & Data Training Programs</title>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/logo.png">
-
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <script>document.documentElement.classList.add('js-enabled');</script>
 </head>
-
 <body>
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
+            <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </button>
 
@@ -47,7 +40,7 @@
                 <a href="index.html#certificate">Certificate</a>
                 <a href="faq.html">FAQ</a>
                 <a href="contact.html">Contact</a>
-                <a href="enroll.html" class="nav-cta active">Enroll</a>
+                <a href="https://forms.gle/VCZjkJQeRaYEWhqT6" target="_blank" class="nav-cta">Enroll</a>
             </div>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span></span>
@@ -60,9 +53,8 @@
     <!-- Enrollment Section -->
     <section class="page-hero">
         <div class="container">
-            <h1 class="page-title fade-up">Enroll in Our <span class="gradient-text">ML Program</span></h1>
-            <p class="page-subtitle fade-up">Start your journey to become a Machine Learning professional. Limited seats
-                available!</p>
+            <h1 class="page-title fade-up">Enroll in Our <span class="gradient-text">Training Programs</span></h1>
+            <p class="page-subtitle fade-up">Start your journey in AI, Data Science, Machine Learning & Analytics. Limited seats available!</p>
         </div>
     </section>
 
@@ -71,90 +63,46 @@
             <div class="enroll-grid">
                 <!-- Enrollment Form -->
                 <div class="enroll-form-container fade-up">
-                    <h2>Student Information</h2>
-                    <p class="form-intro">Fill out the form below to enroll in our 12-Week ML Training Program.</p>
-
-                    <form class="enroll-form" id="enrollForm" novalidate>
-                        <div class="form-group">
-                            <label for="enrollName">Full Name <span class="required">*</span></label>
-                            <input type="text" id="enrollName" name="name" required placeholder="Enter your full name">
-                            <span class="error-message" id="enrollNameError"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="enrollEmail">Email Address <span class="required">*</span></label>
-                            <input type="email" id="enrollEmail" name="email" required
-                                placeholder="your.email@example.com">
-                            <span class="error-message" id="enrollEmailError"></span>
-                            <small class="form-hint">We'll send course access details to this email</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="enrollPhone">Phone Number <span class="required">*</span></label>
-                            <input type="tel" id="enrollPhone" name="phone" required placeholder="+91 1234567890">
-                            <span class="error-message" id="enrollPhoneError"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="enrollCollege">College/Institution</label>
-                            <input type="text" id="enrollCollege" name="college"
-                                placeholder="Your college or institution name">
-                            <span class="error-message" id="enrollCollegeError"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="enrollInterest">Course Interest <span class="required">*</span></label>
-                            <select id="enrollInterest" name="interest" required>
-                                <option value="">Select your interest</option>
-                                <option value="career">Career in ML/Data Science</option>
-                                <option value="skill">Skill Development</option>
-                                <option value="project">Build ML Projects</option>
-                                <option value="certificate">Get Certificate</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <span class="error-message" id="enrollInterestError"></span>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="enrollTerms" name="terms" required>
-                                <span>I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a> and <a
-                                        href="privacy.html" target="_blank">Privacy Policy</a>.</span>
-                            </label>
-                            <span class="error-message" id="enrollTermsError"></span>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="enrollConsent" name="consent">
-                                <span>I consent to receive program updates and promotional emails (optional).</span>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-large" id="enrollSubmit">
-                            Proceed to Payment <span class="price">(₹4,999)</span>
-                        </button>
-
-                        <div class="form-message" id="enrollFormMessage"></div>
-                    </form>
+                    <h2>Ready to Enroll?</h2>
+                    <p class="form-intro">Click the button below to fill out our enrollment form and start your AI & Data Science journey.</p>
+                    
+                    <!-- ============================================
+                         📝 GOOGLE FORM LINK PLACEHOLDER
+                         
+                         Replace "YOUR_GOOGLE_FORM_LINK_HERE" with your actual Google Form link
+                         
+                         Example: https://forms.gle/abc123xyz
+                         
+                         This link is also used in:
+                         - index.html (Enroll buttons)
+                         - Navigation menu
+                         ============================================ -->
+                    <div class="google-form-container" style="text-align: center; padding: 40px 0;">
+                        <a href="https://forms.gle/VCZjkJQeRaYEWhqT6" target="_blank" class="btn btn-primary btn-large">
+                            Open Enrollment Form
+                        </a>
+                        <p class="form-hint" style="margin-top: 20px; color: rgba(255, 255, 255, 0.7);">
+                            You'll be redirected to our secure Google Form
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Enrollment Summary -->
                 <div class="enroll-summary fade-up">
                     <div class="summary-card">
-                        <h3>Program Summary</h3>
+                        <h3>Program Overview</h3>
                         <div class="summary-content">
                             <div class="summary-item">
-                                <span class="summary-label">Program Duration:</span>
+                                <span class="summary-label">Duration:</span>
                                 <span class="summary-value">12 Weeks</span>
                             </div>
                             <div class="summary-item">
-                                <span class="summary-label">Program Fee:</span>
-                                <span class="summary-value price-highlight">₹4,999</span>
+                                <span class="summary-label">Format:</span>
+                                <span class="summary-value">Online, Self-paced</span>
                             </div>
                             <div class="summary-item">
-                                <span class="summary-label">Payment:</span>
-                                <span class="summary-value">One-time payment</span>
+                                <span class="summary-label">Support:</span>
+                                <span class="summary-value">Expert Mentorship</span>
                             </div>
                         </div>
                     </div>
@@ -162,29 +110,29 @@
                     <div class="summary-card">
                         <h3>What You'll Get</h3>
                         <ul class="summary-list">
-                            <li>✓ 12-Week ML Roadmap</li>
+                            <li>✓ Comprehensive Curriculum</li>
                             <li>✓ Weekly Assignments</li>
-                            <li>✓ 6 ML Projects</li>
-                            <li>✓ GitHub Portfolio Building</li>
-                            <li>✓ Internship Certificate</li>
-                            <li>✓ Expert Support</li>
+                            <li>✓ Real-world Projects</li>
+                            <li>✓ GitHub Portfolio</li>
+                            <li>✓ Industry Certificate</li>
+                            <li>✓ Career Support</li>
                         </ul>
                     </div>
 
                     <div class="summary-card trust-card">
-                        <h3>Trust & Security</h3>
+                        <h3>Why Choose Us</h3>
                         <div class="trust-badges">
                             <div class="trust-badge-small">
                                 <span class="trust-icon">✓</span>
                                 <span>MSME Registered</span>
                             </div>
                             <div class="trust-badge-small">
-                                <span class="trust-icon">🔒</span>
-                                <span>Secure Payment via Razorpay</span>
+                                <span class="trust-icon">🎓</span>
+                                <span>Industry-Recognized Certificates</span>
                             </div>
                             <div class="trust-badge-small">
-                                <span class="trust-icon">📜</span>
-                                <span>7-Day Refund Policy</span>
+                                <span class="trust-icon">💼</span>
+                                <span>Career Support</span>
                             </div>
                         </div>
                     </div>
@@ -198,38 +146,7 @@
                 </div>
             </div>
 
-            <!-- Payment Section (Hidden until form submission) -->
-            <div class="payment-section" id="paymentSection" style="display: none;">
-                <div class="payment-container fade-up">
-                    <h2>Complete Your Payment</h2>
-                    <p class="payment-intro">You're almost there! Complete the secure payment to finalize your
-                        enrollment.</p>
 
-                    <div class="payment-info">
-                        <div class="payment-summary">
-                            <div class="payment-item">
-                                <span>Program Fee:</span>
-                                <span>₹4,999</span>
-                            </div>
-                            <div class="payment-item total">
-                                <span>Total Amount:</span>
-                                <span>₹4,999</span>
-                            </div>
-                        </div>
-
-                        <!-- Razorpay Payment Button -->
-                        <div class="razorpay-container">
-                            <p class="payment-note">🔒 Your payment is secured by Razorpay. We never store your card
-                                details.</p>
-                            <!-- Replace this button with your actual Razorpay payment integration -->
-                            <button class="btn btn-primary btn-large" id="razorpayButton">
-                                Pay ₹4,999 via Razorpay
-                            </button>
-                            <p class="payment-hint">After payment, you'll be redirected to the confirmation page.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -258,7 +175,7 @@
                         <h4>Legal</h4>
                         <a href="terms.html" class="footer-link">Terms & Conditions</a>
                         <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                        <a href="terms.html" class="footer-link">Refund Policy</a>
+                        <a href="faq.html" class="footer-link">Refund Policy</a>
                     </div>
                     <div class="footer-section">
                         <h4>Contact</h4>
@@ -269,16 +186,14 @@
                     <div class="footer-section">
                         <h4>Follow Us</h4>
                         <div class="social-links">
-                            <a href="#" class="social-link" aria-label="WhatsApp" title="WhatsApp">💬</a>
-                            <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">💼</a>
-                            <a href="#" class="social-link" aria-label="Instagram" title="Instagram">📷</a>
+                            <a href="https://www.linkedin.com/company/cosmic-datalabs/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" title="LinkedIn">💼</a>
+                            <a href="https://www.instagram.com/cosmicdatalabs/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram" title="Instagram">📷</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Cosmic DataLabs. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a
-                        href="terms.html">Terms & Conditions</a></p>
+                <p>&copy; 2025 Cosmic DataLabs. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
             </div>
         </div>
     </footer>
@@ -288,5 +203,5 @@
     <!-- Razorpay Integration Script - Replace with your actual Razorpay integration -->
     <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
 </body>
-
 </html>
+

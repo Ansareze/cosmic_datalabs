@@ -589,12 +589,11 @@ if (razorpayButton) {
 
 // ===== MOBILE MENU IMPROVEMENTS =====
 // Update mobile menu to close on link click
-const navLinks = document.querySelector('.nav-links');
+// (Using navLinks variable declared earlier)
 if (navLinks) {
     const navLinksItems = navLinks.querySelectorAll('a');
     navLinksItems.forEach(link => {
         link.addEventListener('click', () => {
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             if (mobileMenuToggle && window.innerWidth <= 768) {
                 mobileMenuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
