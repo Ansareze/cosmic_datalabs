@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Enroll in Cosmic DataLabs 12-Week ML Training Program. Secure payment via Razorpay. Only ₹4,999. Limited seats available.">
+    <meta name="description"
+        content="Enroll in Cosmic DataLabs 12-Week ML Training Program. Secure payment via Razorpay. Only ₹4,999. Limited seats available.">
     <title>Enroll Now - Cosmic DataLabs | ML Training Program</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/logo.png">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    <script>document.documentElement.classList.add('js-enabled');</script>
 </head>
+
 <body>
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
         </svg>
     </button>
 
@@ -54,7 +61,8 @@
     <section class="page-hero">
         <div class="container">
             <h1 class="page-title fade-up">Enroll in Our <span class="gradient-text">ML Program</span></h1>
-            <p class="page-subtitle fade-up">Start your journey to become a Machine Learning professional. Limited seats available!</p>
+            <p class="page-subtitle fade-up">Start your journey to become a Machine Learning professional. Limited seats
+                available!</p>
         </div>
     </section>
 
@@ -65,7 +73,7 @@
                 <div class="enroll-form-container fade-up">
                     <h2>Student Information</h2>
                     <p class="form-intro">Fill out the form below to enroll in our 12-Week ML Training Program.</p>
-                    
+
                     <form class="enroll-form" id="enrollForm" novalidate>
                         <div class="form-group">
                             <label for="enrollName">Full Name <span class="required">*</span></label>
@@ -75,7 +83,8 @@
 
                         <div class="form-group">
                             <label for="enrollEmail">Email Address <span class="required">*</span></label>
-                            <input type="email" id="enrollEmail" name="email" required placeholder="your.email@example.com">
+                            <input type="email" id="enrollEmail" name="email" required
+                                placeholder="your.email@example.com">
                             <span class="error-message" id="enrollEmailError"></span>
                             <small class="form-hint">We'll send course access details to this email</small>
                         </div>
@@ -88,7 +97,8 @@
 
                         <div class="form-group">
                             <label for="enrollCollege">College/Institution</label>
-                            <input type="text" id="enrollCollege" name="college" placeholder="Your college or institution name">
+                            <input type="text" id="enrollCollege" name="college"
+                                placeholder="Your college or institution name">
                             <span class="error-message" id="enrollCollegeError"></span>
                         </div>
 
@@ -108,7 +118,8 @@
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="enrollTerms" name="terms" required>
-                                <span>I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.</span>
+                                <span>I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a> and <a
+                                        href="privacy.html" target="_blank">Privacy Policy</a>.</span>
                             </label>
                             <span class="error-message" id="enrollTermsError"></span>
                         </div>
@@ -123,7 +134,7 @@
                         <button type="submit" class="btn btn-primary btn-large" id="enrollSubmit">
                             Proceed to Payment <span class="price">(₹4,999)</span>
                         </button>
-                        
+
                         <div class="form-message" id="enrollFormMessage"></div>
                     </form>
                 </div>
@@ -191,8 +202,9 @@
             <div class="payment-section" id="paymentSection" style="display: none;">
                 <div class="payment-container fade-up">
                     <h2>Complete Your Payment</h2>
-                    <p class="payment-intro">You're almost there! Complete the secure payment to finalize your enrollment.</p>
-                    
+                    <p class="payment-intro">You're almost there! Complete the secure payment to finalize your
+                        enrollment.</p>
+
                     <div class="payment-info">
                         <div class="payment-summary">
                             <div class="payment-item">
@@ -207,7 +219,8 @@
 
                         <!-- Razorpay Payment Button -->
                         <div class="razorpay-container">
-                            <p class="payment-note">🔒 Your payment is secured by Razorpay. We never store your card details.</p>
+                            <p class="payment-note">🔒 Your payment is secured by Razorpay. We never store your card
+                                details.</p>
                             <!-- Replace this button with your actual Razorpay payment integration -->
                             <button class="btn btn-primary btn-large" id="razorpayButton">
                                 Pay ₹4,999 via Razorpay
@@ -245,7 +258,7 @@
                         <h4>Legal</h4>
                         <a href="terms.html" class="footer-link">Terms & Conditions</a>
                         <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                        <a href="faq.html" class="footer-link">Refund Policy</a>
+                        <a href="terms.html" class="footer-link">Refund Policy</a>
                     </div>
                     <div class="footer-section">
                         <h4>Contact</h4>
@@ -264,7 +277,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Cosmic DataLabs. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+                <p>&copy; 2025 Cosmic DataLabs. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a
+                        href="terms.html">Terms & Conditions</a></p>
             </div>
         </div>
     </footer>
@@ -274,5 +288,5 @@
     <!-- Razorpay Integration Script - Replace with your actual Razorpay integration -->
     <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
 </body>
-</html>
 
+</html>
